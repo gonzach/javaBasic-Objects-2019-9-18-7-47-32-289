@@ -36,15 +36,24 @@ public class PersonForEquals {
     public boolean equals(Object obj) {
         // TODO: please modify the following code to pass the test
         // <--start
-        throw new NotImplementedException();
-        // --end-->
+        if ( ( obj != null && obj.getClass().equals(this.getClass()) ) ){
+            PersonForEquals obj_property = (PersonForEquals)obj;
+            if ( this.name == obj_property.getName() && this.yearOfBirth == obj_property.getYearOfBirth() ) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
     public int hashCode() {
         // TODO: please modify the following code to pass the test
         // <--start
-        throw new NotImplementedException();
+        return  this.name.hashCode() + yearOfBirth;
+//        throw new NotImplementedException();
         // --end-->
     }
 }
