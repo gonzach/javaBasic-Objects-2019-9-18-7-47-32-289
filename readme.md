@@ -446,7 +446,16 @@ ObjectTest
 12. should_get_initialization_ordering
       What is the knowledge point of the test? Where is the official document to the knowledge point?
       - The knowledge point of the test is about initialization ordering.   
-      
+      Why the test failed at first?
+      - The test failed because the value is null. 
+      Why you corrected the test that way?
+      - initfield() will return first "Field Initializer"
+        then "Initialization Block" 
+        so since in the third block it have this(4) before returning the value of it's third block it will call first the constructor with int parameter. 
+        That's why "Constructor with argument" return first before "Default constructor"
+      Do you have further questions on this knowledge point?
+      - I don’t have further question   
+
 13. should_get_message_of_var_length_parameters
       What is the knowledge point of the test? Where is the official document to the knowledge point?
       - To know the about of the behavior of a string builder when you pass an parameter 
